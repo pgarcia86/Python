@@ -1,5 +1,5 @@
-##Sets. Los sets no admiten elementos duplicados. Se pueden unir dos sets, pero mediante el método union
-##Es desordenado, no puede hacerse subscripts de un set.
+##  Sets. Los sets no admiten elementos duplicados. Se pueden unir dos sets, pero mediante el método union
+##  Es desordenado, no puede hacerse subscripts de un set.
 
 my_set = {}
 my_other_set = {}

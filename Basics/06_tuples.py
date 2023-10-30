@@ -1,6 +1,6 @@
-##Algunas operaciones con Tuples. Las tuplas son inmutables, es decir no pueden modificarse sus elementos.
-##Pueden concatenarse y crear sub tuplas desde otra tupla. Pueden castearse a una lista, modificar esa lista y después volverlo a 
-##asignar a la tupla
+##  Algunas operaciones con Tuples. Las tuplas son inmutables, es decir no pueden modificarse sus elementos.
+##  Pueden concatenarse y crear sub tuplas desde otra tupla. Pueden castearse a una lista, modificar esa lista y después volverlo a 
+##  asignar a la tupla
 
 my_tuple = tuple()
 my_other_tuple = ()

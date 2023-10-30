@@ -1,4 +1,4 @@
-##Operaciones básicas con variables. Asignaciones, concatenaciones, iteracion con for en un string
+##  Operaciones básicas con variables. Asignaciones, concatenaciones, iteracion con for en un string
 
 height = 22             ##Asigno el valor 22 a la variable height
 
