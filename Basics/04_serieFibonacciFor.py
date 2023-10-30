@@ -1,4 +1,4 @@
-##Serie de Fibonacci sin recursividad ni listas
+##  Serie de Fibonacci sin recursividad ni listas
 
 a = 0
 b = 1

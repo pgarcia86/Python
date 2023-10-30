@@ -1,6 +1,6 @@
 print('Hola mundo')
 
-print(2+2)      ##Muesta directamente el resultado de la  operacion. No necesito escribir ; para que funcione
+print(2+2)              ##Muesta directamente el resultado de la  operacion. No necesito escribir ; para que funcione
 
 print(2*2)
 

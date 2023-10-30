@@ -1,4 +1,4 @@
-##Diccionarios
+##  Diccionarios
 
 my_dict = dict()
 my_other_dict = {}
@@ -26,6 +26,7 @@ my_other_dict = {
 }
 
 my_list = my_dict.keys()
+my_other_list = my_dict.values()
 
 
 print(my_dict)
@@ -60,7 +61,8 @@ print(my_dict.items())
 print(my_dict.keys())               ##Con el metodo keys() obtengo el nombre del campo del diccionario con el que estoy trabajando
 print(my_dict.values())             ##Con el metodo values() obtengo el nombre de los valores del diccionario con el que estoy trabajando
 
-new_dict = dict.fromkeys(my_list)
+
+new_dict = dict.fromkeys(my_list, my_other_list)
 # new_dict['Name'] = "Juan Carlos"
 # new_dict['Age'] = 98
 # new_dict['Height'] = 1.94
