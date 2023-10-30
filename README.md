@@ -6,3 +6,7 @@ Soy programador Junior. Quiero aprender a programar Python. Para eso, me ayudo d
 ##Día 1 - 23/10/2023
 
 Primeros contacto con el lenguaje.
+
+##Dia 2 - 30/10/2023
+
+Creo algunas clases y algunas excepciones
