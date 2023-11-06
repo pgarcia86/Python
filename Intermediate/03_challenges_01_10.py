@@ -1,28 +1,6 @@
-##  Challenges
+##  Challenges - 01-10
 
-
-##  FUNCIONES AUXILIARES PARA LOS CHALLENGES
-
-def from_string_to_list(word):
-
-    aux_word = ""
-    word_list = []
-    space = -1
-    print("PALABRA INGRESADA: ", word)
-    word = word.lower()
-
-    if "-·" in word or "·-" in word:
-        #Primero cuento los espacios
-        for i in range(0, len(word)):
-            if word[i] == " ":
-                word_list.append(word[space + 1:i])
-                space = i
-    else:
-        for i in word:
-            word_list.append(i)
-
-    return word_list
-
+from modules import from_string_to_list, take_off_signs
 
 """
 01
@@ -32,7 +10,6 @@ Escribe un programa que muestre por consola (con un print) los números de 1 a 1
     - Múltiplos de 5 por la palabra "buzz".
     - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
 """ 
-
 def fizz_buzz_fizzbuzz():
     number = 1
 
@@ -268,7 +245,7 @@ https://es.wikipedia.org/wiki/Código_morse.
 """
 def to_morse_to_text(word):
 
-    print("\nCONVERTIR DE MORSE A TEXTO Y DE TEXTO A MORSE")
+    print("\n\nCONVERTIR DE MORSE A TEXTO Y DE TEXTO A MORSE")
 
     morse = False
     word_morse = ""
@@ -281,6 +258,7 @@ def to_morse_to_text(word):
         print("Ingreso un mensaje en letras")
         morse = False
 
+    print("PALABRA INGRESADA: ", word)
     word_list = from_string_to_list(word)
     
     for i in range(0, len(word_list)):
@@ -551,21 +529,58 @@ def to_morse_to_text(word):
                 word_text = word_text.replace(word_text[i+2], word_text[i+2].upper(), 1)
                 print(word_text)               
         
-        return word_text
+        return "PALABRA TRADUCIDA A TEXTO: ", word_text
     else:
         word_morse += "·-·-·"
-        return  word_morse
+        return  "PALABRA TRADUCIDA A MORSE: ", word_morse
 
-print("PALABRA TRADUCIDA A MORSE: ", end = to_morse_to_text("Voy a escribir un texto mas largo. Espero que se entienda un poco mas "
-        "lo que estoy haciendo. Tengo 37 anios y me llamo Pablo"))
+print(to_morse_to_text("Voy a escribir un texto mas largo. Espero que se entienda un poco mas lo que estoy haciendo. "
+    "Tengo 37 anios y me llamo Pablo"))
 
-print("PALABRA TRADUCIDA A MORSE: ", end = to_morse_to_text("Voy a probar algo nuevo. Todavia no se si 48 funciona"))
+print(to_morse_to_text("Voy a probar algo nuevo. Todavia no se si 48 funciona"))
 
-print("PALABRA TRADUCIDA A TEXTO: ", end = to_morse_to_text("·--· ·- ·-·· ·- -··· ·-· ·- --··-- "
-    "/ - ·-· ·- -·· ··- -·-· ·· -·· --- / -·· · / - · -··- - --- --··-- / ·- / -- --- ·-· ··· · ·-·-·- ·-·-·"))
+print(to_morse_to_text("·--· ·- ·-·· ·- -··· ·-· ·- --··-- / - ·-· ·- -·· ··- -·-· ·· -·· --- / -·· · / - · -··- - --- --··-- / "
+    "·- / -- --- ·-· ··· · ·-·-·- ·-·-·"))
 
-print("PALABRA TRADUCIDA A TEXTO: ", end = to_morse_to_text("···- --- -·-- / ·- / ·--· ·-· --- -··· ·- ·-· / ·- ·-·· --· --- "
-    "/ -· ··- · ···- --- ·-·-·- / - --- -·· ·- ···- ·· ·- / -· --- / ··· · / ··· ·· / ····- ---·· / ··-· ··- -· -·-· ·· --- -· ·- ·-·-·"))
+print(to_morse_to_text("···- --- -·-- / ·- / ·--· ·-· --- -··· ·- ·-· / ·- ·-·· --· --- / -· ··- · ···- --- ·-·-·- / "
+    "- --- -·· ·- ···- ·· ·- / -· --- / ··· · / ··· ·· / ····- ---·· / ··-· ··- -· -·-· ·· --- -· ·- ·-·-·"))
 
+
+"""
+10
+Crea un programa que comprueba si los paréntesis, llaves y corchetes de una expresión están equilibrados.
+- Equilibrado significa que estos delimitadores se abren y cieran en orden y de forma correcta.
+- Paréntesis, llaves y corchetes son igual de prioritarios. No hay uno más importante que otro.
+- Expresión balanceada: { [ a * ( c + d ) ] - 5 }
+- Expresión no balanceada: { a * ( c + d ) ] - 5 }
+"""
+def balanced_expression(phrase):
+
+    print("\n\nCHEQUEA SI LAS LLAVES, CORCHETES Y PARENTESIS ESTAN EQUILIBRADOS")
+    ##  VOY A CREAR 6 LISTAS UNA CON LOS PARENTESIS QUE ABREN, OTRA CON LOS QUE CIERRAN Y LO MISMO CON LOS CORCHETES Y LAS LLAVES
+    ##  SI EL LARGO DE LAS LISTAS SON IGUALES, LA EXPRESION ESTA BALANCEADA
+    
+    phrase_list = take_off_signs(phrase)
+
+    braket_open_list = []
+    braket_close_list = []
+    square_braket_open_list = []
+    square_braket_close_list = []
+    curly_braket_open_list = []
+    curly_braket_close_list = []
+
+    braket_open_list = re.findall('[\(]', phrase)
+    braket_close_list = re.findall('[\)]', phrase)
+    square_braket_open_list = re.findall('[\[]', phrase)
+    square_braket_close_list = re.findall('[\]]', phrase)
+    curly_braket_open_list = re.findall('[\{]', phrase)
+    curly_braket_close_list = re.findall('[\}]', phrase)
+
+    if len(braket_open_list) == len(braket_close_list) and len(square_braket_open_list) == len(square_braket_close_list) and len(curly_braket_open_list) == len(curly_braket_close_list):
+        return "La expresion esta balanceada"
+    
+    return "La expresion no esta balanceada"
+
+print(balanced_expression("{ [ a * ( c + d ) ] - 5 } [ ] { } g H 22 ( ) { } "))
 
 
