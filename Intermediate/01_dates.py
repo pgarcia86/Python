@@ -28,14 +28,14 @@ print(current_date.year)
 
 
 ##  Puedo hacer operaciones dentro de los parametros que paso para crear la fecha
-other_date = datetime.date(current_date.year + 1, current_date.month + 2, current_date.day - 1)
+other_date = datetime.date(current_date.year, current_date.month, current_date.day)
 
 print(other_date)
 
 
 difference = other_date - current_date
 
-print(difference)
+print("Diferencia: ", difference)
 
 start_timedelta = datetime.timedelta(200, 100, 100, weeks=10)       ##  Crea un delta de tiempo con los parametros que paso
 end_timedelta = datetime.timedelta(300, 100, 100, weeks=13)

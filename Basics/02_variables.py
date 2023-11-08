@@ -20,7 +20,12 @@ string = "this is a string"             ##Declaro un string
 
 print(string)
 
-print(string[0])                        ##Accedo al elemento 0 de la variable string (T)
+
+string = string.replace(string[0], 'j', 1)
+
+print(string)
+
+print(string[0].upper())                        ##Accedo al elemento 0 de la variable string (T)
 
 print(string[1].upper())                ##Accedo y modifico el elemento 1 de la variable string (h -> H)
 
