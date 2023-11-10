@@ -1,3 +1,6 @@
+## Challenges - 21-30
+
+from modules import from_string_to_list, from_list_to_string, take_off_spaces
 '''
 21
 Lee el fichero "Challenge21.txt" incluido en el proyecto, calcula su resultado e imprímelo.
@@ -18,7 +21,39 @@ Crea una función que reciba dos array, un booleano y retorne un array.
     - Si el booleano es falso buscará y retornará los elementos no comunes de los dos array.
     - No se pueden utilizar operaciones del lenguaje que lo resuelvan directamente.
 '''
+def count_repeated(list_one, list_two, bool):
+    
+    print("SE PASAN 2 LISTAS POR PARAMETRO Y UN BOOLEANO. SI ES TRUE, DEVUELVO LOS VALORES REPETIDOS, SINO LOS NO REPETIDOS")
+    repeated = []
+    not_repeated = []
+    
+    for word_one in list_one:
+        for word_two in list_two:
+            if word_one == word_two:
+                repeated.append(word_one)
 
+    for word in list_one:
+        if word not in repeated:
+            not_repeated.append(word)
+    
+    for word in list_two:
+        if word not in repeated:
+            not_repeated.append(word)
+
+    for rep in repeated:
+        if repeated.count(rep) > 1:
+            repeated.remove(rep)
+
+    for no_rep in not_repeated:
+        if not_repeated.count(no_rep) > 1:
+            not_repeated.remove(no_rep)
+
+    if bool:
+        return repeated    
+    return not_repeated
+
+print(False, " ", count_repeated(['a', 'c', 'd', 'p'], ['b', 'e', 'f', 'p', 'f'], False))
+print(True, " ", count_repeated(['a', 'c', 'd', 'p'], ['b', 'e', 'f', 'p', 'f'], True))
 
 
 '''
