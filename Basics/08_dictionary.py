@@ -28,6 +28,8 @@ my_other_dict = {
 my_list = my_dict.keys()
 my_other_list = my_dict.values()
 
+print('Lista de Keys', my_list)
+
 
 print(my_dict)
 print(my_other_dict)
