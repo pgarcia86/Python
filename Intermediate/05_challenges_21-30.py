@@ -316,6 +316,30 @@ Crea una función que ordene y retorne una matriz de números.
     ordenarse de menor a mayor o de mayor a menor.
     - No se pueden utilizar funciones propias del lenguaje que lo resuelvan automáticamente.
 '''
+def sort_array(num_list, order):
+
+    print('\nORDENO EL ARRAY DE MAYOR A MENOR Y DE MENOR A MAYOR DEPENDIENDO DE LO QUE INGRESEN POR PARAMETRO')
+    
+    sorted_array = num_list
+    if order == 'Asc':
+        #Codigo para ordenar de menor a mayor
+        for i in range(len(sorted_array) - 1):
+            for j in range(0, len(sorted_array) - i - 1):
+                if sorted_array[j] > sorted_array[j + 1]:
+                    sorted_array[j], sorted_array[j + 1] = sorted_array[j + 1], sorted_array[j]
+        return sorted_array
+    elif order == 'Desc':
+        #Codigo para ordenar de mayor a menor
+        for i in range(len(sorted_array) - 1):
+            for j in range(0, len(sorted_array) - i - 1):
+                if sorted_array[j] < sorted_array[j + 1]:
+                    sorted_array[j], sorted_array[j + 1] = sorted_array[j + 1], sorted_array[j]
+        return sorted_array
+    else:
+        return 'NO ES CORRECTA LA OPCION ELEGIDA'
+    return 
+
+print(sort_array([5, 2, 1, 8, 4], 'Desc'))
 
 
 '''
@@ -330,3 +354,26 @@ Crea una función que reciba un texto y muestre cada palabra en una línea, form
     * reto?  *
     **********
 '''
+def draw_text(text):
+
+    print('\nIMPRIMO POR PANTALLA UN MENSAJE CON UN ESTILO DETERMINADO')
+    text_list = text.split()
+    asterisk = ''
+
+    for i in range(0, len(max(text_list, key=len))+4):
+        asterisk += '*'
+
+    for i in range(0, len(text_list)):
+        text_list[i] = '* ' + text_list[i]
+
+    print(asterisk)
+
+    for word in text_list:
+        for i in range(len(word)-1, len(max(text_list, key=len))):
+            word = word + ' '
+        word = word + '*'
+        print(word)
+
+    print(asterisk)
+
+draw_text('Imprimo estas cosas hermosas por pantalla para que se vea mas lindo')
