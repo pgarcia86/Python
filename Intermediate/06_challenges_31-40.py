@@ -3,6 +3,22 @@
 Crea una función que imprima los 30 próximos años bisiestos siguientes a uno dado.
     - Utiliza el menor número de líneas para resolver el ejercicio.
 '''
+def leap_year(year):
+    print('\nMUESTRO POR PANTALLA LOS 30 AÑOS BISIESTOS SIGUIENTES AL PASADO POR PARAMETRO')
+    cont = 1
+    while cont < 31:
+        if year % 4 == 0:
+            if year % 100 != 0 and year % 400 != 0:
+                print(cont, ' - BISIESTO: ', year)
+                year += 4
+                cont += 1
+            else:
+                year += 4
+                cont += 1
+        else:
+            year += 1
+
+leap_year(2046)
 
 
 '''
@@ -10,7 +26,14 @@ Crea una función que imprima los 30 próximos años bisiestos siguientes a uno 
 Dado un listado de números, encuentra el SEGUNDO más grande.
 
 '''
+def sort_array(num_list):
+    print('\nMUESTRO POR PANTALLA EL SEGUNDO VALOR MAS GRANDE DEL ARRAY PASADO POR PARAMETRO')
+    
+    aux_list = num_list
+    aux_list.sort(reverse=True)    
+    return aux_list[1]
 
+print(sort_array([5,9,4,6,1,4,17,59]))
 
 '''
 33
