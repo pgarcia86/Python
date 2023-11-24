@@ -120,7 +120,7 @@ Crea una función que calcule y retorne cuántos días hay entre dos cadenas de 
     - Si una de las dos cadenas de texto no representa una fecha correcta se lanzará una excepción.
  */
 """
-from datetime import datetime, timedelta
+from datetime import datetime
 def dif_dates(first_string, second_string):
 
     print("\n15 - CALCULO DIFERENCIA ENTRE FECHAS")
